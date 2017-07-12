@@ -1,7 +1,7 @@
 var path = require('path');
 
 var config = {
-    entry: path.resolve(__dirname, 'app/main.js'),
+    entry: path.resolve(__dirname, 'app/main.jsx'),
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
@@ -14,6 +14,9 @@ var config = {
             query: {
                 presets: ['es2015', 'react']
             }
+        }, {
+            test: /\.css$/, // Only .css files
+            loaders: ['style-loader','css-loader'] // Run both loaders
         }],
     }
 };

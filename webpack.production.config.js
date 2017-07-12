@@ -15,6 +15,9 @@ var config = {
             test: /\.jsx$/,
             exclude: /node_modules/,
             loaders: ['babel-loader?presets[]=react,presets[]=es2015'],
+        }, {
+            test: /\.css$/, // Only .css files
+            loaders: ['style-loader','css-loader'] // Run both loaders
         }]
     }
 };
