@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from  'react-dom';
 import 'zent/css/index.css';
-import Hello from './component.jsx';
+import Routes from './routes/index.jsx';
 
 main();
 
 function main() {
-    ReactDOM.render(<Hello />, document.getElementById('app'));
+    ReactDOM.render(<Routes />, document.getElementById('app'));
 }
