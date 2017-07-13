@@ -9,13 +9,15 @@ var config = {
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
+            'actions': path.resolve(__dirname, './src/flux/actions'),
+            'stores': path.resolve(__dirname,'./src/flux/stores'),
             'components': path.resolve(__dirname, './src/components'),
             'services': path.resolve(__dirname, './src/services')
         }
     },
     module: {
         loaders: [{
-            test: /\.jsx?$/,
+            test: /\.(js|jsx)?$/,
             exclude: /node_modules/,
             use: {
                 loader: 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-0',

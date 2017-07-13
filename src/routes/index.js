@@ -5,14 +5,14 @@ import {
     Link
 } from 'react-router-dom'
 import Hello from 'components/Hello';
-import World from 'components/World';
+import Counter from 'components/Counter';
 
 
 const Routes = () =>
     <Router>
         <div>
             <Route exact path="/" component={Hello}/>
-            <Route path="/world" component={World}/>
+            <Route path="/world" component={Counter}/>
         </div>
     </Router>;
 
