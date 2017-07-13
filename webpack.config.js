@@ -8,7 +8,7 @@ var config = {
     },
     resolve: {
         extensions: ['.js', '.jsx'],
-        alias : {
+        alias: {
             'components': path.resolve(__dirname, './src/components'),
             'services': path.resolve(__dirname, './src/services')
         }
@@ -16,14 +16,17 @@ var config = {
     module: {
         loaders: [{
             test: /\.jsx?$/,
-            loader: 'babel-loader',
-            // exclude: /node_modules/,
-            query: {
-                presets: ['es2015', 'react']
-            }
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-0',
+                options: {
+                    presets: ['es2015','react','stage-0'],
+                    plugins: ['transform-class-properties']
+                }
+            },
         }, {
             test: /\.css$/, // Only .css files
-            loaders: ['style-loader','css-loader'] // Run both loaders
+            loaders: ['style-loader', 'css-loader'] // Run both loaders
         }],
     }
 };

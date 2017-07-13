@@ -18,7 +18,13 @@ var config = {
         loaders: [{
             test: /\.jsx$/,
             exclude: /node_modules/,
-            loaders: ['babel-loader?presets[]=react,presets[]=es2015'],
+            use: {
+                loader: 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-0',
+                options: {
+                    presets: ['es2015','react','stage-0'],
+                    plugins: ['transform-class-properties']
+                }
+            },
         }, {
             test: /\.css$/, // Only .css files
             loaders: ['style-loader','css-loader']
