@@ -10,7 +10,7 @@ var config = {
         extensions: ['.js', '.jsx'],
         alias: {
             'actions': path.resolve(__dirname, './src/flux/actions'),
-            'stores': path.resolve(__dirname,'./src/flux/stores'),
+            'stores': path.resolve(__dirname, './src/flux/stores'),
             'components': path.resolve(__dirname, './src/components'),
             'services': path.resolve(__dirname, './src/services')
         }
@@ -22,7 +22,7 @@ var config = {
             use: {
                 loader: 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-0',
                 options: {
-                    presets: ['es2015','react','stage-0'],
+                    presets: ['es2015', 'react', 'stage-0'],
                     plugins: ['transform-class-properties']
                 }
             },
